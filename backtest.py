@@ -5,8 +5,9 @@ timeframe = "M15"
 symbol = "SPX500"
 timezone = "America/New_York"
 
-def get_price_data(symbol):
-    '''Load price data for a given symbol from a CSV file and process it.
+
+def price_data(symbol):
+    '''Load data for a given symbol from a CSV file and process it.
 
     Parameters
     ----------
@@ -24,5 +25,7 @@ def get_price_data(symbol):
     df.index = pd.to_datetime(df.index, utc=True).tz_convert(timezone)
     df = df.loc["2019-12-31":]
     return df
+
+
 
 
